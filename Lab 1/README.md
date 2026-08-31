@@ -84,7 +84,7 @@ who doesn't should come away understanding what it's famous for. How might you i
 
 After rehearsing the interaction with the Tinkerbelle tool, we prototyped Newton's experiment by performing it in a dark room.
 
-**Version 1:** [Prototyped Interaction of Newtons Prism] (https://youtube.com/shorts/NeiGnuR0BM0?feature=share)  
+**Version 1:** [Prototyped Interaction of Newtons Prism](https://youtube.com/shorts/NeiGnuR0BM0?feature=share)  
 
 
 **Please indicate who you collaborated with on this lab.** Be generous in
