@@ -57,12 +57,10 @@ Feedback on Tinkerbelle: We need to figure out how to do a gradient on the app. 
 
 ## Part D. Wizard the Device
 
-Set up a "wizard" arrangement so one person can secretly drive the light while
-another acts with it — this is how you make the device feel alive without
-building any real electronics. (Zoom works well for recording; you can pin the
-video feed of whichever scene you want to capture.)
+Before recording our final video, we rehearsed how we would recreate the interaction with the Tinkerbelle tool. This involved using the Tinkerbelle tool to represent how the sunlight refracted a spectrum of colors once one prism is placed in front of the 'sunlight' and how the spectrum of colors turned back into white light when a second prism is placed.
 
-**Include your first attempts at recording the wizarded set-up here.**
+[WizardingNewton'sPrism.MOV.zip](https://github.com/user-attachments/files/31663921/WizardingNewton.sPrism.MOV.zip)
+
 
 ## Part E. (optional) Costume the Device
 
@@ -84,7 +82,10 @@ and calm for a bedroom?
 the top of this lab: a viewer who knows the piece should recognize it; a viewer
 who doesn't should come away understanding what it's famous for. How might you illustrate the non-sequential aspects of the interaction in the sketch?
 
-**Include your video here.**
+After rehearsing the interaction with the Tinkerbelle tool, we prototyped Newton's experiment by performing it in a dark room.
+
+**Version 1:** [Prototyped Interaction of Newtons Prism] (https://youtube.com/shorts/NeiGnuR0BM0?feature=share)  
+
 
 **Please indicate who you collaborated with on this lab.** Be generous in
 acknowledging their contributions, and credit any other influences (YouTube,
