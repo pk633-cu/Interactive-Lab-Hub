@@ -104,8 +104,13 @@ videos, and give them reactions and feedback: tell them what you saw happening,
 guess the masterwork and the goals of the characters, and ask about anything that
 wasn't clear.
 
-**Who were the other groups you kibitzed with? Add links to their project pages here.**
-**Summarize the feedback you got from your partners here.**
+**Group 1:** https://github.com/mado0512/Interactive-Lab-Hub/tree/Fall2026/Lab%201
+**Group 2:** https://github.com/Nishant-Ray/Interactive-Lab-Hub/tree/Fall2026/Lab%201
+**Group 3:** https://github.com/jUSTbEarOCk/Interactive-Lab-Hub/tree/Fall2026/Lab%201
+**Group 4:** https://github.com/pallavi-srinivas/Interactive-Lab-Hub/blob/Fall2026/Lab%201/README.md 
+
+**Feedback from other teams:** Biggest problem that was noted by all 3 teams that critiqued us was that the room was too dark. They were able to identify what was going on but it was because of a small voiceover where we say that we are adding a prism. I think some good advice given was to either show the prism beforehand with the lights on or use a flashlight as a replication for the sunlight in Newton's prism. This can help to show the prism more clearly so people know what we are reacting. We also were told to drop the voiceover since it feels like it gives away exactly what we are trying to show. Instead let the acting do most of the talking. Maybe add a sharp sound to signify the light refracting into a rainbow.  
+
 
 ## Remix, Update, or Critique the Master
 
