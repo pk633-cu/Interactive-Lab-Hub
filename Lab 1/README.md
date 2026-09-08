@@ -133,6 +133,9 @@ your response engages with what your master was really doing.
 **Document everything here — especially the storyboard and video. Photos of the
 prototype are great too.**
 
+<img width="2766" height="1989" alt="storyboard for Newton&#39;s Prism (final)" src="https://github.com/user-attachments/assets/135bcc84-a1cd-4513-9596-f22a1dfc3b22" />
+
+
 ---
 
 
