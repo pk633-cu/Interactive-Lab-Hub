@@ -133,7 +133,18 @@ your response engages with what your master was really doing.
 **Document everything here — especially the storyboard and video. Photos of the
 prototype are great too.**
 
+First we sketched out the interaction that Newton executed.
 <img width="2766" height="1989" alt="storyboard for Newton&#39;s Prism (final)" src="https://github.com/user-attachments/assets/135bcc84-a1cd-4513-9596-f22a1dfc3b22" />
+
+Then we setup our interaction where one person was controlling the Tinkerbelle tool to represent the projected/refracted light while holding a flash light that represented the sun/light source.
+<img width="4032" height="3024" alt="NewtonsPrismProtoypeSetup" src="https://github.com/user-attachments/assets/e06f86fb-26b7-42a9-abcf-4fd923ce2810" />
+
+This is our final video after implementing the feedback. 
+[Final Newton's Prism Prototype](https://youtube.com/shorts/zTblNGebuRg?feature=share)
+
+
+
+
 
 
 ---
