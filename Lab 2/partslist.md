@@ -2,7 +2,7 @@
 
 ## Parts in the kit by Wednesday class Sep. 9th
 
-1 x [Raspberry Pi 5 Model B/8GB](https://www.raspberrypi.com/products/raspberry-pi-5/)
+1 x [Raspberry Pi 5 Model B/8GB](https://www.raspberrypi.com/products/raspberry-pi-5/) 
 
 1 x [Rasberry Pi Power Supply](https://www.raspberrypi.com/products/27w-power-supply/)
 
