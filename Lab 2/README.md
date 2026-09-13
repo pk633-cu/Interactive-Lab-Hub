@@ -156,7 +156,15 @@ You can look in `screen_boot_script.py` for how to display text on the screen!
 
 You can look in `image.py` for an example of how to display an image on the screen. Can you make it switch to another image when you push one of the buttons?
 
-\*\*\***Include a picture of your own Raspberry Pi displaying the piscreen.service with your unique MAC address. Additionally, please provide another picture showing the successful completion of the screen test.**\*\*\*
+Piscreen.service with my unique MAC address 
+<img width="3866" height="2376" alt="MacAddress" src="https://github.com/user-attachments/assets/22ff0534-3d5f-4415-8209-0a8cadbce429" />
+
+Successful completion of the screen test.**\*\*\*
+<img width="1350" height="272" alt="PythonScreenTestCode" src="https://github.com/user-attachments/assets/46d38ed1-e2c0-4a4b-971e-2decfd39e03b" />
+
+<img width="2243" height="1394" alt="RaspiPiSuccessfulScreenTest" src="https://github.com/user-attachments/assets/f996f7fe-e596-41a1-a1a1-dc3d67bb07b5" />
+
+
 
 
 ## Part D. 
@@ -183,6 +191,14 @@ Option 3. A nowadays often preferred method is to use Microsoft [VS code to remo
 
 Pro Tip: Using tools like [code-server](https://coder.com/docs/code-server/latest) you can even setup a VS Code coding environment hosted on your raspberry pi and code through a web browser on your tablet or smartphone! 
 
+**Pi Showing Time**
+<img width="2084" height="1322" alt="PiDate Time" src="https://github.com/user-attachments/assets/b78b8dfe-d396-4ff0-8b6d-7ff41650be79" />
+
+Code
+<img width="1806" height="1296" alt="Screenshot 2026-09-12 at 4 48 59 PM" src="https://github.com/user-attachments/assets/ec4734b5-dcf9-4498-917f-645dd1f4becb" />
+
+
+
 ## Part E. Read Part 2. Sketch and brainstorm further interactions and features you would like for your clock.
 
 One potential source of ideas might be thinking about other clocks and timekeeping devices for inspiration.
@@ -191,10 +207,20 @@ Another might be novel units of time. How do you measure a year? [In daylights? 
 
 We strongly discourage literal digital or analog clock display: Be creative.
 
+**Idea 1: Sunset O'Clock** - different phases of the sun from daylight to midnight to measure time throughout the day. 
 
-** Insert ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf)), storyboards for your ideas **
+Storyboard
+<img width="2406" height="488" alt="SunsetOClockSketch" src="https://github.com/user-attachments/assets/25cdfae1-adde-4abc-bbec-be1535fab485" />
 
+**Idea 2: Weather + Time** - A clock that shows the weather and time of day through different parts of the day in New York City. Similar to the Sunset O'Clock, the time of day is represented through the amount of light/how it looks outside in the particular part of the day.
 
+Storyboard
+<img width="2026" height="437" alt="Weather:TimeSketch" src="https://github.com/user-attachments/assets/632f4bfb-6472-4dc5-b6bf-b00e67b85d14" />
+
+**Idea 3: Step O'Clock** - A clock that measures time by tracking steps through three parts of the day: morning, afternoon, and evening. Each part has a goal or estimate for the number of steps a user would take during that time period.
+
+Verplank Diagram
+<img width="2155" height="1322" alt="StepOClockSketch" src="https://github.com/user-attachments/assets/a3b405a9-6c76-4e20-bf8f-3d06fc4fe954" />
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
 
