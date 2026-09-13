@@ -159,7 +159,7 @@ You can look in `image.py` for an example of how to display an image on the scre
 Piscreen.service with my unique MAC address 
 <img width="3866" height="2376" alt="MacAddress" src="https://github.com/user-attachments/assets/22ff0534-3d5f-4415-8209-0a8cadbce429" />
 
-Successful completion of the screen test.**\*\*\*
+Successful completion of the screen test.
 <img width="1350" height="272" alt="PythonScreenTestCode" src="https://github.com/user-attachments/assets/46d38ed1-e2c0-4a4b-971e-2decfd39e03b" />
 
 <img width="2243" height="1394" alt="RaspiPiSuccessfulScreenTest" src="https://github.com/user-attachments/assets/f996f7fe-e596-41a1-a1a1-dc3d67bb07b5" />
