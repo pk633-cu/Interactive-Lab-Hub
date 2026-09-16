@@ -245,6 +245,9 @@ https://github.com/chonjessica23/Interactive-Lab-Hub/tree/Fall2026/Lab%202
 2. Look at and give feedback on the Part E. for at least 3 other people in the class and get 3 people to comment on your Part E!)
 **Put the feedback for your ideas here.**
 
+Overall, most groups liked my first idea where the suns phase/height represents the time. However, many were confused with the second idea of the Pi showing weather updates along with the sun showing the time of the day in New York City as they felt like too much was going on. Many people did like the last idea of the step o'clock where a user would have to complete a certain number of steps depending on the time of day. However, one group made a valid point that this seemed more like a goal the user was trying to meet rather than a measurement of tiem.
+
+
 ## Update your Lab Hub
 
 [Update your Lab Hub](pull_updates/README.md) to get the latest content and requirements for Part 2.
