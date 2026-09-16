@@ -223,8 +223,11 @@ Verplank Diagram
 <img width="2155" height="1322" alt="StepOClockSketch" src="https://github.com/user-attachments/assets/a3b405a9-6c76-4e20-bf8f-3d06fc4fe954" />
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
+
 Group 1: Gaurav Patel, Nishant Ray, Neeha Revula 
+
 https://github.com/LaboriouslyExquisite/Interactive-Lab-Hub/blob/Fall2026/Lab%202/README.md
+
 Overall, I like the idea. It’s creative, fun, and doable! Something I would consider is that the Raspberry Pi’s screen is small, so fitting up to 12 food items or pies might get crowded. Instead, you could do something like a cake with up to 12 candles. It might also be helpful to use 12 suits instead of 24 since you plan to use a 12-hour clock. This could help users associate each suit with a specific hour more easily. For instance, at both 2 PM and 2 AM, Spider-Man would wear the same suit. This could also help users tell the time at a glance, especially when the screen is populated with multiple items. I think simplifying these elements could make the concept easier to read while still keeping the fun and playful parts of your original idea.
 
 # Lab 2 Part 2
