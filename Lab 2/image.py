@@ -13,6 +13,8 @@ Author(s): Melissa LeBlanc-Williams for Adafruit Industries
 
 import digitalio
 import board
+import time
+from PIL import Image
 from PIL import Image, ImageDraw
 import adafruit_rgb_display.ili9341 as ili9341
 import adafruit_rgb_display.st7789 as st7789  # pylint: disable=unused-import
@@ -50,6 +52,7 @@ disp = st7789.ST7789(
     dc=dc_pin,
     rst=reset_pin,
     baudrate=BAUDRATE,
+    rotation=90,
     width=135,
     height=240,
     x_offset=53,
@@ -74,28 +77,52 @@ draw = ImageDraw.Draw(image)
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image)
 
-image = Image.open("red.jpg")
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
+sunset_images = [
+    "sun_01_draft.png",
+    "sun_02_draft.png",
+    "sun_03_draft.png",
+]
 
 # Scale the image to the smaller screen dimension
-image_ratio = image.width / image.height
-screen_ratio = width / height
-if screen_ratio < image_ratio:
-    scaled_width = image.width * height // image.height
-    scaled_height = height
-else:
-    scaled_width = width
-    scaled_height = image.height * width // image.width
-image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
+while True:
+     for filename in sunset_images:
 
-# Crop and center the image
-x = scaled_width // 2 - width // 2
-y = scaled_height // 2 - height // 2
-image = image.crop((x, y, x + width, y + height))
+        # Open current sunset image
+        image = Image.open(filename).convert("RGB")
 
-# Display image.
-disp.image(image)
+        # Scale image to screen
+        image_ratio = image.width / image.height
+        screen_ratio = width / height
 
+        if screen_ratio < image_ratio:
+            scaled_width = image.width * height // image.height
+            scaled_height = height
+        else:
+            scaled_width = width
+            scaled_height = image.height * width // image.width
+
+        image = image.resize(
+            (scaled_width, scaled_height),
+            Image.BICUBIC
+        )
+
+        # Crop and center image
+        x = scaled_width // 2 - width // 2
+
+        # Keeping your +30 adjustment
+        y = scaled_height // 2 - height // 2 + 30
+
+        image = image.crop(
+            (x, y, x + width, y + height)
+        )
+
+        # Display current sunset
+        disp.image(image)
+
+        # TESTING:
+        # 3 seconds represents one hour
+        time.sleep(3)
