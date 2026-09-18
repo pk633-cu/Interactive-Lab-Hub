@@ -82,9 +82,30 @@ backlight.switch_to_output()
 backlight.value = True
 
 sunset_images = [
-    "sun_01_draft.png",
-    "sun_02_draft.png",
-    "sun_03_draft.png",
+    "sun_0.png",
+    "sun_1.png",
+    "sun_2.png",
+    "sun_3.png",
+    "sun_4.png",
+    "sun_5.png",
+    "sun_6.png",
+    "sun_7.png",
+    "sun_8.png",
+    "sun_9.png",
+    "sun_10.png",
+    "sun_11.png",
+    "sun_12.png",
+    "sun_13.png",
+    "sun_14.png",
+    "sun_15.png",
+    "sun_16.png",
+    "sun17.1.png",
+    "sun_18.png",
+    "sun_19.png",
+    "sun_20.png",
+    "sun_21.png",
+    "sun_22.png",
+    "sun_23.png",
 ]
 
 # Scale the image to the smaller screen dimension
@@ -112,9 +133,7 @@ while True:
 
         # Crop and center image
         x = scaled_width // 2 - width // 2
-
-        # Keeping your +30 adjustment
-        y = scaled_height // 2 - height // 2 + 30
+        y = scaled_height // 2 - height // 2 + 33
 
         image = image.crop(
             (x, y, x + width, y + height)
@@ -124,5 +143,5 @@ while True:
         disp.image(image)
 
         # TESTING:
-        # 3 seconds represents one hour
-        time.sleep(3)
+        # 0.5 seconds represents one hour
+        time.sleep(0.5)
