@@ -245,7 +245,11 @@ https://github.com/chonjessica23/Interactive-Lab-Hub/tree/Fall2026/Lab%202
 2. Look at and give feedback on the Part E. for at least 3 other people in the class and get 3 people to comment on your Part E!)
 **Put the feedback for your ideas here.**
 
-Overall, most groups liked my first idea where the suns phase/height represents the time. However, many were confused with the second idea of the Pi showing weather updates along with the sun showing the time of the day in New York City as they felt like too much was going on. Many people did like the last idea of the step o'clock where a user would have to complete a certain number of steps depending on the time of day. However, one group made a valid point that this seemed more like a goal the user was trying to meet rather than a measurement of tiem.
+Feedback #1 (Gaurav Patel) - Overall, I like the first idea, it seems like it is easy to tell time because the sunset is very recognizable. I like the idea that the sun's height will represent time. I am curious about the minutes thought will the sun only change per hour or will it slowly rise per minute. I think that is something that is probably an important distinction to make. The second idea is a little confusing. I don't understand fully what the buildings are representing? Like do they have any indication on the time or is it just the weather/sun? I like the last idea too where there is a step's associated with the clock. It tells you what time you need to have the steps done by. However it doesn't seem like a clock more like a goal that is needed to be achieved in that time-frame.
+
+Feedback #2 (Yujing Zhou) - I like all three of the ideas, and I think they are really interesting and visually engaging. The Step O’Clock impressed me most cause it can remind people to walk more and keep healthy. Maybe making the display respond in a playful way when the users doesn’t meet the step goal could be a potential improvement? This could make the interaction with the device even more engaging.
+
+Feedback #3 (Jessica Chon) - Overall, I like the sunset idea the best as it's the most recognizable and intuitive idea, since users will be easily be able to tell that the purpose of the PiClock is to tell what time of day it is.
 
 
 ## Update your Lab Hub
@@ -280,10 +284,10 @@ Do take advantage of having done the previous iteration to refine and simplify y
 
 ** Insert any updates ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf))!, storyboards for your ideas **
 
+For my PiClock, I decide to use the position of the sun and the sunset to tell different times of the day. With the assistance of AI to, I created 24 different frames to represent each hour of the day. AI helped me keep factors like the water and buildings the same as much as possible, while only changing the sun, sky color, and reflection of the sun.
 
-\*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
+https://github.com/user-attachments/assets/e804c8e2-23b5-4c21-a323-249400d17345
 
-\*\*\***Take a video of your PiClock.**\*\*\*
 
 
 As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
