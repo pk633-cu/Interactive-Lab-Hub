@@ -1,6 +1,6 @@
 # Chatterboxes
 
-**NAMES OF COLLABORATORS HERE**
+Pallavi Khanna
 
 [![Watch the video](https://user-images.githubusercontent.com/1128669/135009222-111fe522-e6ba-46ad-b6dc-d1633d21129c.png)](https://youtu.be/LZ0VJClIlRI?si=Yy84mcyVYuVV19mn)
 
@@ -109,7 +109,11 @@ The demo script also shows `--output-raw`, which streams audio to the speaker as
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
 (This shell file should be saved to your own repo for this lab.)
 
+[My shell file for Pi greeting me](speech-scripts/pallavi_greeting.sh) 
+
 \*\***Then answer: Is the same greeting, in these different voices, the same greeting? Describe one concrete way the voice changed what the utterance seemed to mean or who seemed to be speaking.**\*\*
+
+No, the same greeting is not the same greeting because some of the voices are more enthusiasitic than others signifying who you are communicating to. For instance, more enthuisiastic tones can be a friend versus more solemn tones can be a coworker/professional interaction. Some the tones in this part are also more robotic, signifying that you’re talking to a computer.
 
 ## B. Speech to Text
 
@@ -131,7 +135,16 @@ Available sizes, smallest first: `tiny.en`, `base.en`, `small.en`, `medium.en`. 
 
 \*\***Record a few seconds of your own speech (`arecord -d 5 -f cd -c 1 -r 16000 test.wav`) and transcribe it with at least two model sizes. Report the real-time factor for each. At what point does the accuracy improvement stop being worth the delay, for a system that has to answer you?**\*\*
 
+Tiny.en - 0.22x
+Small. en - 1.27x
+Base.en - 0.44x
+Medium.en - 3.51x
+
+The small.en took a reasonable amount of time and also produced one of the most accurate results. Even though medium.en produced the most accurate answer, it took too long to load. When a user is interacting with a product that uses medium.en, they may not have enough patience to wait that long or think the deviced crashed and end up existing out.
+
 \*\***Write your own script that verbally asks for a numerical input (a phone number, zipcode, number of pets) and records the answer the respondent provides.**\*\* Numbers are a good stress test — transcription systems make characteristic errors on digit strings, and you will want to know what they are before you design around them.
+
+[Script asking for a numerical input](speech-scripts/zipcode_question.sh) 
 
 ## C. Turn-taking: knowing when someone has stopped talking
 
@@ -152,6 +165,8 @@ Speak, pause, and watch it transcribe. Now change the endpointing threshold — 
 ```
 
 \*\***Try both extremes, and something in between. Describe what each one feels like to talk to. Note specifically: at 0.2s, what kinds of normal speech get cut off? At 1.5s, what does the delay make the system seem like?**\*\*
+
+When I tried the 0.2, the system cut me off when I was taking a breath in the middle of my sentence. On the other hand, when I tried 1.5, the system cut me off when I deliberately paused to think what else to say. Lastly, 0.7 cut me off when I finished a sentence. From this, I felt as if the endpointing threshold with the lower values were transcribing my answers and giving feedback in real-time, while the thresholds with the higher values waited till I was finished with my thought to fully transcribe what I was saying.
 
 There is no correct value. A system that takes drink orders and a system that listens to someone think out loud want very different thresholds, and the right one depends on what your users are doing with their pauses.
 
