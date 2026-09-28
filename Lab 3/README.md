@@ -182,7 +182,12 @@ There is no correct value. A system that takes drink orders and a system that li
 
 Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stuck? Make a device that talks for dogs. If that is too stupid, find an application that is better than that.)
 
-\*\***Post your storyboard and diagram here.**\*\*
+**Speech-Enabled Medicine/Vitamin Schedule Assistant:** For this lab, I decided to create an assistant where the user can input the schedule of the medicines/vitamins they plan to take throughout the week and the speech-enabled device reminds them to take which medicine and when. I decided to make two possible scenarios:
+
+1. Device-initiated - Where the device initiates the interaction at a specific time.
+2. User-initiated - Where the user, themselves, asks which medicine/vitamin they are currently scheduled to take.
+
+<img width="2466" height="2250" alt="speech-enabled medication vitamin schedule Assistant" src="https://github.com/user-attachments/assets/6ced23b3-e17f-4524-96a4-71ef307d5a21" />
 
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses.
 
