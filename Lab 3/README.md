@@ -191,7 +191,12 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses.
 
-\*\***Please describe and document your process.**\*\*
+<img width="666" height="692" alt="Screenshot 2026-09-28 at 10 09 11 PM" src="https://github.com/user-attachments/assets/a70b4049-4454-4097-8733-c61b1a0419a9" />
+
+<img width="630" height="244" alt="Screenshot 2026-09-28 at 10 12 18 PM" src="https://github.com/user-attachments/assets/499bc41f-cf82-4933-b5ca-52a7f5100528" />
+
+<img width="630" height="244" alt="Screenshot 2026-09-28 at 10 12 18 PM" src="https://github.com/user-attachments/assets/d2ccfaf4-8d7e-4213-9f11-8b3c70612d74" />
+
 
 Your script should include the pauses. Where does your device wait, and for how long? You now know from Part C that this is a parameter you have to choose, not something that happens for free.
 
