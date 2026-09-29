@@ -192,7 +192,7 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses.
 
 <img width="666" height="692" alt="Screenshot 2026-09-28 at 10 09 11 PM" src="https://github.com/user-attachments/assets/a70b4049-4454-4097-8733-c61b1a0419a9" />
-
+<img width="644" height="258" alt="Screenshot 2026-09-28 at 10 12 05 PM" src="https://github.com/user-attachments/assets/0c34789e-4a61-4030-9494-4ec2c5c0d08e" />
 
 The Script
 
