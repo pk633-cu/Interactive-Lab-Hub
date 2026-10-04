@@ -14,8 +14,8 @@ from medsched_screen import show_status, show_caption
 SAMPLE_RATE = 16000
 
 # MedSched decides the user is finished speaking
-# after 1.2 seconds of silence.
-MIN_SILENCE = 1
+# after 0.6 seconds of silence.
+MIN_SILENCE = 0.6
 
 VAD_MODEL = Path("models/silero_vad.onnx")
 
