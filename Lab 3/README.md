@@ -87,12 +87,15 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings.
-Somethings I could improve are the timing, decreasing the parameter between each dialogue to make the prototype more efficient and engaging, so users don't get impatient and give up on the device. Another thing I would improve is the device anticipating different ways users say things. This would allow the interaction to feel more natural and accessible to users with different dialects.
 
-2. What are other modes of interaction *beyond speech* that you might also use to clarify how to interact? In particular: how does someone know when the device is listening, and when it is thinking? You have a screen and an LED.
+Something I could improve are the timing by decreasing the parameter between each dialogue to make the prototype more efficient and engaging, so users don't get impatient and give up on the device. Another thing I would improve is the device anticipating different ways users say the same thing. This would allow the interaction to feel more natural and accessible to users with different dialects.
+
+3. What are other modes of interaction *beyond speech* that you might also use to clarify how to interact? In particular: how does someone know when the device is listening, and when it is thinking? You have a screen and an LED.
+
 I could use the screen to indicate what the device is saying, and what it's doing when the user is talking or when the device is processing.
 
-3. Make a new storyboard, diagram and/or script based on these reflections.
+5. Make a new storyboard, diagram and/or script based on these reflections.
+
 For my final script, I decided to merge the two dialogues I tested out. In a real world situation, the device-initiated scenario would be applicable to more users, however, I also wanted to highlight the device's ability to proactively correct the user when they are about to take the wrong medication.
 
 So this is the final script I ended up with:
