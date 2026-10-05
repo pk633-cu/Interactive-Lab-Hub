@@ -101,14 +101,23 @@ For my final script, I decided to merge the two dialogues I tested out. In a rea
 So this is the final script I ended up with:
 
 Device: Good morning! Reminder to take your medication.
+
 User: What medication do I take?
+
     [Device waits 0.6 seconds]
+    
 Device: You have Vitamin D scheduled for this morning.
+
 User: I thought I was supposed to take folic acid.
+
     [Device waits 0.6 seconds]
+    
 Device: Folic acid is scheduled for this evening. Please take Vitamin D.
+
 User: Done.
+
     [Device waits 0.6 seconds]
+    
 Device: Great! Recorded that you have taken Vitamin D.
 
 ## Prototype your system
