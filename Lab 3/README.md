@@ -131,7 +131,7 @@ MedSched reminder --> User responds (The device shows "listening" on the UI) -->
 
 To create this I made two python files - 
 
-[MedSched Voice Assistant0](https://github.com/pk633-cu/Interactive-Lab-Hub/blob/Fall2026/Lab%203/medsched_assistant.py)) 
+[MedSched Voice Assistant0](https://github.com/pk633-cu/Interactive-Lab-Hub/blob/Fall2026/Lab%203/medsched_assistant.py) 
 [MedSched UI](https://github.com/pk633-cu/Interactive-Lab-Hub/blob/Fall2026/Lab%203/medsched_screen.py)
 
 *Include videos or screencaptures of both the system and the controller.*
