@@ -130,21 +130,26 @@ The user flow of the system:
 MedSched reminder --> User responds (The device shows "listening" on the UI) --> the system transcribes the user response --> Process the information the user provided (shows "thinking") --> MedSched responds and shows its response on the screen 
 
 To create this I made two python files - 
-[MedSched Voice Assistant0]([Lab 3/medsched_assistant.py](https://github.com/pk633-cu/Interactive-Lab-Hub/blob/Fall2026/Lab%203/medsched_assistant.py)) 
+
+[MedSched Voice Assistant0](https://github.com/pk633-cu/Interactive-Lab-Hub/blob/Fall2026/Lab%203/medsched_assistant.py)) 
 [MedSched UI](https://github.com/pk633-cu/Interactive-Lab-Hub/blob/Fall2026/Lab%203/medsched_screen.py)
 
 *Include videos or screencaptures of both the system and the controller.*
 
 The Interaction 
+
 https://github.com/user-attachments/assets/e6f49826-00b8-4b99-9075-5df05ad787d3
 
 User interacting with the device
+
 https://github.com/user-attachments/assets/b99f72e4-ab81-44fe-8163-5cb98184bb30
 
 The system UI 
+
 https://github.com/user-attachments/assets/6e612b88-691b-4155-9d5e-ac4502d4d813
 
 The controller - shows the terminal executing the interaction and recognizing/transcribing users' speech
+
 https://github.com/user-attachments/assets/2c9edef2-18f9-4453-812d-a9641d393686
 
 ## Test the system
