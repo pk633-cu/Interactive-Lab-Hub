@@ -2,109 +2,13 @@
 
 Pallavi Khanna
 
-[![Watch the video](https://user-images.githubusercontent.com/1128669/135009222-111fe522-e6ba-46ad-b6dc-d1633d21129c.png)](https://youtu.be/LZ0VJClIlRI?si=Yy84mcyVYuVV19mn)
-
-In this lab, we want you to design interaction with a speech-enabled device — something that listens and talks to you. This device can do anything *but* control lights (since we already did that in Lab 1). First, we want you to storyboard what you imagine the conversational interaction to be like. Then you will use wizarding techniques to elicit examples of what people might say, ask, or respond. We then want you to use the examples collected from at least two other people to inform the redesign of the device.
-
-We will focus on **audio** as the main modality for interaction to start; these general techniques can be extended to **video**, **haptics** or other interactive mechanisms in the second part of the Lab.
-
-A note on what you are building with. Speech interfaces are usually taught as two boxes — speech-in, speech-out — and that framing hides the part that actually determines whether an interaction works. Between listening and speaking sits the question of **whose turn it is**: when does the device decide you have finished talking, and how long does it make you wait before it answers? This lab gives you direct control over both, and we will ask you to notice what changes when you move them.
-
-## Prep for Part 1: Get the Latest Content and Pick up Additional Parts
-
-Please check instructions in [prep.md](prep.md) and complete the setup.
-
-### Pick up Web Camera If You Don't Have One
-
-Students who have not already received a web camera will receive their Webcam and at the beginning of lab. If you cannot make it to class this week, please contact the TAs to ensure you get these.
-
-### Get the Latest Content
-
-As always, pull updates from the class Interactive-Lab-Hub to both your Pi and your own GitHub repo.
-
-**\[recommended\]** Option 1: On the Pi, `cd` to your `Interactive-Lab-Hub`, pull the updates from upstream (class lab-hub) and push the updates back to your own GitHub repo. You will need the *personal access token* for this.
-
-```
-pi@ixe00:~$ cd Interactive-Lab-Hub
-pi@ixe00:~/Interactive-Lab-Hub $ git pull upstream Fall2026
-pi@ixe00:~/Interactive-Lab-Hub $ git add .
-pi@ixe00:~/Interactive-Lab-Hub $ git commit -m "get lab3 updates"
-pi@ixe00:~/Interactive-Lab-Hub $ git push
-```
-
-Option 2: On your own GitHub repo, create a pull request to get updates from the class Interactive-Lab-Hub. After you have the latest updates online, go to your Pi, `cd` to your `Interactive-Lab-Hub` and use `git pull`.
-
----
-
 # Part 1
-
-## Setup
-
-Create and activate a virtual environment for this lab:
-
-```
-pi@ixe00:~$ cd Interactive-Lab-Hub/Lab\ 3
-pi@ixe00:~/Interactive-Lab-Hub/Lab 3 $ python3 -m venv .venv
-pi@ixe00:~/Interactive-Lab-Hub/Lab 3 $ source .venv/bin/activate
-(.venv) pi@ixe00:~/Interactive-Lab-Hub/Lab 3 $
-```
-
-Install the Python dependencies:
-
-```
-(.venv) $ pip install -r requirements.txt
-```
-
-This takes a few minutes. If you would like it to take considerably less time, [`uv`](https://docs.astral.sh/uv/) is a drop-in replacement for `pip` that is dramatically faster on the Pi:
-
-```
-(.venv) $ pip install uv && uv pip install -r requirements.txt
-```
-
-Then run the setup script, which installs the classic speech synthesizers, downloads the voice activity detection model, and pre-fetches a neural voice and a speech recognition model so you are not waiting on downloads during lab:
-
-```
-(.venv):~$ cd speech-scripts
-(.venv) $ ./setup.sh
-```
-
-Check your audio devices before going further. `arecord -l` lists capture devices and `aplay -l` lists playback devices; if your webcam microphone or Bluetooth speaker does not appear, fix that first — every script below assumes the system defaults are the ones you want.
 
 ## A. Text to Speech
 
 Your Pi can speak in several quite different ways, and the differences are audible in a way that matters for design. In `speech-scripts/` there are shell scripts for each.
 
 ### The classic engines
-
-```
-(.venv) $ cd speech-scripts
-
-(.venv) $ sudo apt update
-(.venv) $ sudo apt install -y espeak festival festvox-kallpc16k
-
-(.venv) $ ./espeak_demo.sh
-(.venv) $ ./festival_demo.sh
-```
-
-You can run these `.sh` files by typing `./filename`, and read one with `cat filename`. You can also play audio files directly with `aplay filename` — try `aplay lookdave.wav`.
-
-These are all decades-old technology and they sound like it. `espeak-ng` is a *formant synthesizer*: it generates speech from an acoustic model of the vocal tract, which is why it sounds robotic but also why the whole thing fits in a couple of megabytes and responds instantly. `festival` is *concatenative*: they stitch together recorded fragments of a real speaker, which sounds more human but breaks audibly at the seams.
-
-### Neural TTS with Piper
-
-Note that the Piper command line changed in version 1.x — voices are now downloaded explicitly with `python3 -m piper.download_voices`, and you invoke it as `python3 -m piper`. Tutorials you find online may show the old `echo ... | piper --model ...` form, which no longer works. Browse the [voice samples](https://rhasspy.github.io/piper-samples) and download a different one if you'd like:
-
-```
-(.venv) $ python3 -m piper.download_voices en_US-lessac-medium
-```
-
-[Piper](https://github.com/OHF-Voice/piper1-gpl) synthesizes speech with a small neural network, runs comfortably on the Pi 5, and sounds markedly better than the above.
-
-```
-(.venv) $ ./piper_demo.sh
-```
-
-The demo script also shows `--output-raw`, which streams audio to the speaker as it is generated rather than writing a file first. Listen for the difference in how quickly speech begins. In a conversational system this gap is the thing your user experiences as responsiveness.
 
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
 (This shell file should be saved to your own repo for this lab.)
@@ -116,22 +20,6 @@ The demo script also shows `--output-raw`, which streams audio to the speaker as
 No, the same greeting is not the same greeting because some of the voices are more enthusiasitic than others signifying who you are communicating to. For instance, more enthuisiastic tones can be a friend versus more solemn tones can be a coworker/professional interaction. Some the tones in this part are also more robotic, signifying that you’re talking to a computer.
 
 ## B. Speech to Text
-
-We use [faster-whisper](https://github.com/SYSTRAN/faster-whisper), a reimplementation of OpenAI's Whisper model that runs several times faster on CPU and does not require PyTorch. All processing happens on the Pi; nothing is sent to a server.
-
-```
-(.venv) $ python transcribe.py lookdave.wav
-```
-
-The transcript is not the interesting output here — the timings are. Run it again with a larger model and compare:
-
-```
-(.venv) $ python transcribe.py lookdave.wav --model base.en
-(.venv) $ python transcribe.py lookdave.wav --model small.en
-#  noted that the first run may take longer because the model is downloaded, and that the HF unauthenticated-request warning is expected and not an error.
-```
-
-Available sizes, smallest first: `tiny.en`, `base.en`, `small.en`, `medium.en`. The `.en` variants are English-only and faster than their multilingual counterparts at the same size.
 
 \*\***Record a few seconds of your own speech (`arecord -d 5 -f cd -c 1 -r 16000 test.wav`) and transcribe it with at least two model sizes. Report the real-time factor for each. At what point does the accuracy improvement stop being worth the delay, for a system that has to answer you?**\*\*
 
@@ -148,35 +36,11 @@ The small.en took a reasonable amount of time and also produced one of the most 
 
 ## C. Turn-taking: knowing when someone has stopped talking
 
-Everything so far has worked on fixed audio files. A real conversational device does not get told when to start and stop recording — it has to decide. This is the problem that makes speech interfaces hard, and it is mostly not a speech recognition problem.
-
-We use a **voice activity detector** (VAD) to segment the microphone stream into utterances. `listen.py` runs Silero VAD continuously and hands each detected utterance to faster-whisper:
-
-```
-(.venv) $ cd speech-scripts
-(.venv) $ python listen.py
-```
-
-Speak, pause, and watch it transcribe. Now change the endpointing threshold — the amount of silence the system requires before it decides your turn is over:
-
-```
-(.venv) $ python listen.py --min-silence 0.2
-(.venv) $ python listen.py --min-silence 1.5
-```
-
 \*\***Try both extremes, and something in between. Describe what each one feels like to talk to. Note specifically: at 0.2s, what kinds of normal speech get cut off? At 1.5s, what does the delay make the system seem like?**\*\*
 
 When I tried the 0.2, the system cut me off when I was taking a breath in the middle of my sentence. On the other hand, when I tried 1.5, the system cut me off when I deliberately paused to think what else to say. Lastly, 0.7 cut me off when I finished a sentence. From this, I felt as if the endpointing threshold with the lower values were transcribing my answers and giving feedback in real-time, while the thresholds with the higher values waited till I was finished with my thought to fully transcribe what I was saying.
 
 There is no correct value. A system that takes drink orders and a system that listens to someone think out loud want very different thresholds, and the right one depends on what your users are doing with their pauses.
-
-### The complete loop
-
-`echo_bot.py` puts the pieces together: it listens, endpoints, transcribes, and speaks a reply through Piper. The dialogue policy is deliberately trivial — it repeats what you said — so that everything you notice is a property of the timing rather than the content.
-
-```
-(.venv) $ python echo_bot.py
-```
 
 ## D. Storyboard
 
@@ -198,15 +62,21 @@ The Script
 
 <img width="630" height="244" alt="Screenshot 2026-09-28 at 10 12 18 PM" src="https://github.com/user-attachments/assets/d2ccfaf4-8d7e-4213-9f11-8b3c70612d74" />
 
-
-Your script should include the pauses. Where does your device wait, and for how long? You now know from Part C that this is a parameter you have to choose, not something that happens for free.
-
 ## E. Acting out the dialogue
 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing. Please record this interaction (for example, using Zoom's record feature).
 
+When deciding which dialogue to test out, I actually re-visited the device-initiated dialogue and tested that one out as well.
+
+Scenario 1 - Starts with user picking up the wrong medication
+https://github.com/user-attachments/assets/ec49aab1-d4bc-4565-b5ea-5d7b387b01d1
+
+Scenario 2 - Device-Initiated - Device wakes up the user/interrupts whatever task they’re doing and tells them to take medication
+https://github.com/user-attachments/assets/cef8ed50-eedf-404f-b474-ddc50de0f420
+
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
 
+When we acted out the dialogue, I found that were actually going faster than the 1.2 second parameter that I added between the user and device dialogues. Considering how short the interaction and user dialogue was, the device does not have to spend a long time processing what the user is saying. So the parameter between dialogues should be smaller.
 
 ---
 
@@ -217,9 +87,26 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings.
+Somethings I could improve are the timing, decreasing the parameter between each dialogue to make the prototype more efficient and engaging, so users don't get impatient and give up on the device. Another thing I would improve is the device anticipating different ways users say things. This would allow the interaction to feel more natural and accessible to users with different dialects.
+
 2. What are other modes of interaction *beyond speech* that you might also use to clarify how to interact? In particular: how does someone know when the device is listening, and when it is thinking? You have a screen and an LED.
+I could use the screen to indicate what the device is saying, and what it's doing when the user is talking or when the device is processing.
+
 3. Make a new storyboard, diagram and/or script based on these reflections.
-4. (optional) Integrate [input devices](inputs.md) in the system
+For my final script, I decided to merge the two dialogues I tested out. In a real world situation, the device-initiated scenario would be applicable to more users, however, I also wanted to highlight the device's ability to proactively correct the user when they are about to take the wrong medication.
+
+So this is the final script I ended up with:
+
+Device: Good morning! Reminder to take your medication.
+User: What medication do I take?
+    [Device waits 0.6 seconds]
+Device: You have Vitamin D scheduled for this morning.
+User: I thought I was supposed to take folic acid.
+    [Device waits 0.6 seconds]
+Device: Folic acid is scheduled for this evening. Please take Vitamin D.
+User: Done.
+    [Device waits 0.6 seconds]
+Device: Great! Recorded that you have taken Vitamin D.
 
 ## Prototype your system
 
@@ -229,26 +116,47 @@ The system should:
 * require participants to speak to it
 
 *Document how the system works.*
+This device is MedSched, a voice assistant that reminds users to take their medication according to their pre-set medication schedule. The device starts the interaction by reminding the user to take their medication. If users aren't sure which medication they should take and when, they can ask the voice assistant. If the voice assistant detects that the user is about to take the wrong medication at the wrong time, it corrects the user and tells them which medication they should take instead.
+
+The system leverages speech recognition to transcribe users' verbal responses and provide a response based on their input. The device also has a user interface that communicates what the device is saying, when it is listening, and when it is preparing a response. This provides users with visual feedback in addition to the voice interaction.
+
+The user flow of the system:
+MedSched reminder --> User responds (The device shows "listening" on the UI) --> the system transcribes the user response --> Process the information the user provided (shows "thinking") --> MedSched responds and shows its response on the screen 
+
+To create this I made two python files - 
+[MedSched Voice Assistant0]([Lab 3/medsched_assistant.py](https://github.com/pk633-cu/Interactive-Lab-Hub/blob/Fall2026/Lab%203/medsched_assistant.py)) 
+[MedSched UI](https://github.com/pk633-cu/Interactive-Lab-Hub/blob/Fall2026/Lab%203/medsched_screen.py)
 
 *Include videos or screencaptures of both the system and the controller.*
+The Interaction 
+https://github.com/user-attachments/assets/e6f49826-00b8-4b99-9075-5df05ad787d3
+
+User interacting with the device
+https://github.com/user-attachments/assets/b99f72e4-ab81-44fe-8163-5cb98184bb30
+
+The system UI 
+https://github.com/user-attachments/assets/6e612b88-691b-4155-9d5e-ac4502d4d813
+
+The controller - shows the terminal executing the interaction and recognizing/transcribing users' speech
+https://github.com/user-attachments/assets/2c9edef2-18f9-4453-812d-a9641d393686
 
 ## Test the system
 
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard *after* the interaction, but we recognize that can be hard.)
 
-Answer the following:
-
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+What worked well was that the screen provided constant feedback to the user, like when it was listening and once it was processing what the user said. Another thing that worked well was that the device anticipated users saying the same thing in different ways. 
+
+What didn't work well was users sometimes had to annunciate what they were saying as the speech recognition was not always accurate. Another thing that could have been improved is that the captions generally appeared way earlier than when the device actually started speaking.
 
 ### What worked well about the controller and what didn't?
-\*\**your answer here*\*\*
+Things that worked well about the controller were that it showed what the user said and whether the device was thinking, listening, or speaking. This made it easy to understand what was happening behind the scenes and when the system recognized speech incorrectly. However, since I programmed it to anticipate for different words and different variations of phrases, it only recognizes those phrases/words.
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
-\*\**your answer here*\*\*
+Something I learned from WoZ interactions is the importance of understanding how users naturally interact with a system before building the device. Users can speak or behave differently than expected which can reveal things that were not initially considered. Additionally, it's also important to provide clear feedback to the user through the interaction, like communicating what the system is doing behind the scenes, to help users plan their next course of action.
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
-\*\**your answer here*\*\*
+Some data I could collect is recording a diverse set of users' speech and how the system transcribes the responses to help improve accuracy of speech recognition. Additionally, I could also collect data on how long users take to respond, how long pauses are, and how long the interactions last along with at which point users decide to end the interaction. This could help improve the time in between each response and increase the amount of users that stay through the whole interaction. Another modality I can use is a camera, for instances where users accidentally pick up the wrong medication and to capture facial expressions where users may be confused about what medication they should take - signaling an automatic response from the device.
 
 <details>
   <summary><strong>Submission Cleanup Reminder (Click to Expand)</strong></summary>
