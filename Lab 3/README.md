@@ -64,8 +64,6 @@ The Script
 
 ## E. Acting out the dialogue
 
-Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing. Please record this interaction (for example, using Zoom's record feature).
-
 When deciding which dialogue to test out, I actually re-visited the device-initiated dialogue and tested that one out as well.
 
 Scenario 1 - Starts with user picking up the wrong medication
@@ -122,12 +120,8 @@ Device: Great! Recorded that you have taken Vitamin D.
 
 ## Prototype your system
 
-The system should:
-* use the Raspberry Pi
-* use one or more sensors
-* require participants to speak to it
-
 *Document how the system works.*
+
 This device is MedSched, a voice assistant that reminds users to take their medication according to their pre-set medication schedule. The device starts the interaction by reminding the user to take their medication. If users aren't sure which medication they should take and when, they can ask the voice assistant. If the voice assistant detects that the user is about to take the wrong medication at the wrong time, it corrects the user and tells them which medication they should take instead.
 
 The system leverages speech recognition to transcribe users' verbal responses and provide a response based on their input. The device also has a user interface that communicates what the device is saying, when it is listening, and when it is preparing a response. This provides users with visual feedback in addition to the voice interaction.
@@ -140,6 +134,7 @@ To create this I made two python files -
 [MedSched UI](https://github.com/pk633-cu/Interactive-Lab-Hub/blob/Fall2026/Lab%203/medsched_screen.py)
 
 *Include videos or screencaptures of both the system and the controller.*
+
 The Interaction 
 https://github.com/user-attachments/assets/e6f49826-00b8-4b99-9075-5df05ad787d3
 
@@ -157,17 +152,21 @@ https://github.com/user-attachments/assets/2c9edef2-18f9-4453-812d-a9641d393686
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard *after* the interaction, but we recognize that can be hard.)
 
 ### What worked well about the system and what didn't?
+
 What worked well was that the screen provided constant feedback to the user, like when it was listening and once it was processing what the user said. Another thing that worked well was that the device anticipated users saying the same thing in different ways. 
 
 What didn't work well was users sometimes had to annunciate what they were saying as the speech recognition was not always accurate. Another thing that could have been improved is that the captions generally appeared way earlier than when the device actually started speaking.
 
 ### What worked well about the controller and what didn't?
+
 Things that worked well about the controller were that it showed what the user said and whether the device was thinking, listening, or speaking. This made it easy to understand what was happening behind the scenes and when the system recognized speech incorrectly. However, since I programmed it to anticipate for different words and different variations of phrases, it only recognizes those phrases/words.
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
+
 Something I learned from WoZ interactions is the importance of understanding how users naturally interact with a system before building the device. Users can speak or behave differently than expected which can reveal things that were not initially considered. Additionally, it's also important to provide clear feedback to the user through the interaction, like communicating what the system is doing behind the scenes, to help users plan their next course of action.
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
+
 Some data I could collect is recording a diverse set of users' speech and how the system transcribes the responses to help improve accuracy of speech recognition. Additionally, I could also collect data on how long users take to respond, how long pauses are, and how long the interactions last along with at which point users decide to end the interaction. This could help improve the time in between each response and increase the amount of users that stay through the whole interaction. Another modality I can use is a camera, for instances where users accidentally pick up the wrong medication and to capture facial expressions where users may be confused about what medication they should take - signaling an automatic response from the device.
 
 <details>
