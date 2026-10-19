@@ -123,6 +123,7 @@ https://github.com/user-attachments/assets/69a3d8f9-f87b-4631-9f4c-28338ca30623
 
 **Diagram - how sensing and actuation are connected**
 
+```text
 VCNL4040 proximity sensor ──► Raspberry Pi (snack_guard.py) ──► Servo pHAT ──► servo rotates door open/closed
                                          │
                                          └──► Qwiic OLED ──► "Hi Enjoy Your Snack!" / "THIS IS NOT YOUR SNACK!"
@@ -130,6 +131,7 @@ VCNL4040 proximity sensor ──► Raspberry Pi (snack_guard.py) ──► Serv
 reading < 1      → nothing there: door closed, screen blank
 reading 1–10     → one hand: door rotates open 90°, holds 5 s, then closes slowly
 reading > 10     → more than one hand: door closes right away, warning on screen
+```
 
 **How does your chosen sensor or input shape the physical response?** The VCNL4040 proximity sensor gives a number that gets bigger as more stuff is in front of it. A reading of 1–10 counts as one hand, so the servo rotates the door open and the OLED says "Hi Enjoy Your Snack!" A reading above 10 means more than one hand (someone else is reaching in), so the door swings shut right away and the screen says "THIS IS NOT YOUR SNACK!" Since the sensor only measures how close and how much is in front of it, the response is based on how many hands are there, not on who they belong to.
 
