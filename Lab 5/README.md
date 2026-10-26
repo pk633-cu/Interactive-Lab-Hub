@@ -1,6 +1,6 @@
 # Observant Systems: Overnight Sensation
 
-**NAMES OF COLLABORATORS HERE**
+Abiola Bolaji (ab3394), Pallavi Srinivas (ps2269), Pallavi Khanna (pk633)
 
 For lab this week, we focus on creating interactive systems that can detect and respond to events or stimuli in the environment of the Pi, like the Boat Detector we mentioned in lecture. 
 Your **observant device** could, for example, count items, find objects, recognize an event or continuously monitor a room.
@@ -108,6 +108,16 @@ pi@raspberrypi:~ $ ollama list
 
 \*\*\***Include a screenshot of `ollama list` showing your models, and the `bus.jpg` result and your own photo with their boxes.**\*\*\*
 
+bus.jpg Results
+
+<img width="560" height="746" alt="Screenshot 2026-10-21 at 7 28 44 PM" src="https://github.com/user-attachments/assets/1579abe6-af64-47a5-bd3c-db586758b77a" />
+
+My photo
+
+<img width="1208" height="906" alt="Screenshot 2026-10-21 at 7 28 53 PM" src="https://github.com/user-attachments/assets/4090ad95-d323-4e8f-9d8a-f41cab831aa4" />
+
+'ollama list'
+<img width="1060" height="150" alt="Screenshot 2026-10-21 at 7 31 07 PM" src="https://github.com/user-attachments/assets/acb7813b-2347-4584-b6fc-23cc890a3116" />
 
 ## Part B. 
 ### See: recognize people in real time with YOLO
@@ -160,7 +170,11 @@ Consider how you might use this position based approach to create an interaction
 
 \*\*\***Include a screenshot or short video of the hand pose demo, and write how you might use face, hand or body pose tracking in your observant system.**\*\*\*
 
+https://github.com/user-attachments/assets/8eca6862-aa09-4bcf-a5b3-d987f2e60d2a
 
+For the observant system, one of the ideas we were considering was tracking movement during our sleep to help us understand our sleep patterns. We might use body pose tracking to capture the different poses we sleep in throughout the night, whether we sleep walked, or even which pose we slept the longest in.
+
+<img width="2162" height="620" alt="Screenshot 2026-10-25 at 8 58 15 PM" src="https://github.com/user-attachments/assets/7be4768c-fa06-4302-b692-263ed78bb8e2" />
 ## Part D. 
 ### Reason: run Qwen on the Pi with Ollama
 
@@ -193,6 +207,12 @@ Four things in the [Ollama API](https://github.com/ollama/ollama/blob/main/docs/
 A 0.8B model is slow and sometimes wrong. It will invent events that are not in the data and agree with a wrong premise. Give it the data, keep its job narrow, and decide what the device does when the model is unsure.
 
 \*\*\***Ask Qwen three questions a bedside device might need to answer. Paste the questions, the answers and how long each took. Try one of them with `qwen3:0.6b` and compare.**\*\*\*
+
+<img width="2162" height="620" alt="Screenshot 2026-10-25 at 8 58 15 PM" src="https://github.com/user-attachments/assets/7ba8aa6b-96b7-4851-ab79-f13b5475bc56" />
+
+<img width="1284" height="416" alt="Screenshot 2026-10-25 at 9 12 37 PM" src="https://github.com/user-attachments/assets/74e72810-2276-41f1-904f-00be3d146403" />
+
+I noticed when we didn't use `qwen3:0.6b` the model provided direct answers to our questions, however, when we did use `qwen3:0.6b` the model produced more human-like and engaging text. For instance, it starts with "Absolutely!" which is more conversational than just listing three proposed steps for our bedtime routine.  
 
 
 ## Part E. 
