@@ -143,6 +143,22 @@ Then press q to quit and run it again with a flag. Each one changes a single thi
 
 \*\*\***Include a short video or screenshots of the person detection. Write down three situations where it did not see you, or saw a person who was not there, and what you think the cause was.**\*\*\*
 
+https://github.com/user-attachments/assets/df576105-af74-4f45-83bd-5d3d23cb406b
+
+https://github.com/user-attachments/assets/7e35b8ff-4723-4b04-8aae-043d2c977be8
+
+https://github.com/user-attachments/assets/c746388e-c541-4893-b5c3-8cb092499369
+
+<img width="1284" height="1020" alt="Screenshot 2026-10-25 at 7 42 40 PM" src="https://github.com/user-attachments/assets/7238b749-4652-46a9-91a8-2e636f5aef73" />
+
+Three situations in which YOLO struggled to detect a person accurately were:
+
+1. **Photo of my dog:** When I showed a photo of my dog, it took some adjusting for the model to detect a "person." I believe this could have been because the photo was displayed on my phone, and factors such as lighting and image quality may have affected the model's detection.
+
+2. **Standing farther away:** Another time YOLO struggled to detect me was when I stood farther back from the camera. I noticed that the detection box flickered. In this instance, I used the `--conf 0.2` setting, which requires a higher confidence score for detections to appear. Since I was farther away, the model may have been less confident in identifying me.
+
+3. **Only part of my body visible:** Although YOLO was generally good at detecting me when my full body wasn't in the frame, I noticed that it stopped detecting me at a certain point. In this instance, only a small portion of my arm was visible, which may not have provided enough visual information for the model to recognize a person.
+
 
 ## Part C. 
 ### See more: hands and pose with MediaPipe
