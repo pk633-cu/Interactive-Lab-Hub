@@ -14,8 +14,6 @@ Abiola Bolaji (ab3394), Pallavi Srinivas (ps2269), Pallavi Khanna (pk633)
 - **Interactive Light Show:** Each device controls a different part of the light or color and communicates with others to create a light display.
 - **Digital Aurora:** Raspberry Pis exchange color and movement information to create a synchronized aurora animation across their displays.
 
-MQTT agrees on almost nothing in advance: you invent the topics and what the messages mean. Smart-home standards like Matter fix the vocabulary instead (every "light" behaves the same). Keep this trade-off in mind when you design your topics in Part C.
-
 ---
 
 ## Part B: Collaborative Pixel Grid
