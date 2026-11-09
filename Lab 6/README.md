@@ -54,7 +54,7 @@ Each Pi was setup with a proximity/gesture sensor:
 
 The webpage showed the colors of the two users (the left circle demonstrated the left user’s mood and the right circle demonstrated the right user’s mood)
 
-<img width="5712" height="4284" alt="699138073-0f58c72e-ea3b-4b6f-8aa8-e6f1097c5f92" src="https://github.com/user-attachments/assets/c5fd1176-9d83-4640-8c86-973a815a9775" />
+<img width="1812" height="1024" alt="Screenshot 2026-11-08 at 8 20 13 PM" src="https://github.com/user-attachments/assets/06476436-b40e-47c5-8bca-b8707ff5741e" />
 
 - MQTT topics used
 
