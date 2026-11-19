@@ -40,8 +40,23 @@ It also encourages users to communicate with their friends about how they are fe
 
 
 **2. Architecture Diagram**
-- Hardware, connections, data flow
-- Label input/computation/output
+
+```mermaid
+flowchart TD
+    A["Participant holds a chosen color near the sensor"]
+    B["APDS-9960 reads raw RGB"]
+    C["Pi publisher scales RGB, adds Pi ID and timestamp, publishes every 0.5 seconds"]
+    D["MQTT broker at farlab.infosci.cornell.edu:1883"]
+    E["mood_ring_server.py parses readings and stores the latest RGB per Pi"]
+    F["Server drops Pis silent for over 5 seconds and averages active RGB values"]
+    G["Webpage updates the large ring and each Pi's color swatch"]
+
+    A --> B --> C
+    C -->|"JSON on IDD/moodring/colors"| D
+    D -->|"Server subscribes to topic"| E
+    E --> F
+    F -->|"Socket.IO mood update; browser fetches /state on load"| G
+```
 
 **3. Build Documentation**
 - Photos of each Pi + sensors
